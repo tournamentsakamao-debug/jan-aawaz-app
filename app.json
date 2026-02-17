@@ -1,0 +1,74 @@
+{
+  "expo": {
+    "name": "Jan Aawaz",
+    "slug": "jan-aawaz",
+    "version": "1.0.0",
+    "orientation": "portrait",
+    "icon": "./assets/images/logo.png",
+    "userInterfaceStyle": "light",
+    "splash": {
+      "image": "./assets/images/splash.png",
+      "resizeMode": "contain",
+      "backgroundColor": "#1E40AF"
+    },
+    "updates": {
+      "fallbackToCacheTimeout": 0
+    },
+    "assetBundlePatterns": [
+      "**/*"
+    ],
+    "ios": {
+      "supportsTablet": true,
+      "bundleIdentifier": "com.janaawaz.app",
+      "config": {
+        "googleMapsApiKey": process.env.EXPO_PUBLIC_GOOGLE_IOS_KEY
+      }
+    },
+    "android": {
+      "adaptiveIcon": {
+        "foregroundImage": "./assets/images/adaptive-icon.png",
+        "backgroundColor": "#1E40AF"
+      },
+      "package": "com.janaawaz.app",
+      "config": {
+        "googleMaps": {
+          "apiKey": process.env.EXPO_PUBLIC_GOOGLE_ANDROID_KEY
+        }
+      },
+      "permissions": [
+        "ACCESS_FINE_LOCATION",
+        "ACCESS_COARSE_LOCATION",
+        "RECORD_AUDIO",
+        "CAMERA",
+        "READ_EXTERNAL_STORAGE",
+        "WRITE_EXTERNAL_STORAGE"
+      ]
+    },
+    "web": {
+      "favicon": "./assets/images/favicon.png"
+    },
+    "plugins": [
+      [
+        "expo-auth-session",
+        {
+          "google": {
+            "androidClientId": process.env.EXPO_PUBLIC_GOOGLE_ANDROID_CLIENT_ID,
+            "iosClientId": process.env.EXPO_PUBLIC_GOOGLE_IOS_CLIENT_ID,
+            "webClientId": process.env.EXPO_PUBLIC_GOOGLE_WEB_CLIENT_ID
+          }
+        }
+      ],
+      [
+        "expo-location",
+        {
+          "locationAlwaysAndWhenInUsePermission": "Allow Jan Aawaz to use your location for area-based problem reporting."
+        }
+      ]
+    ],
+    "extra": {
+      "eas": {
+        "projectId": "your-eas-project-id"
+      }
+    }
+  }
+          }
